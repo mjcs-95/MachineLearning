@@ -36,14 +36,10 @@ a2 =-2; b2=0; c2x= r*sin(t)+a2; c2y= r*cos(t)+b2; % cx2 = a2-r:0.01:a2+r; cy2= s
 Np=10;
 px = linspace( min(a1,a2)-r,max(a1,a2)+r,Np);
 py = linspace( min(b1,b2)-r,max(b1,b2)+r,Np);
-x=[];
-y=[];
-for i=1:Np
-    x = [x px(:)'];
-    y = [y py(i)*ones(1,Np)];
-end
+[x,y] = meshgrid(px, py);
 
-p_out = 1:length(x);
+%all_points
+p_out = 1:length(x(:));
 %points_inside_circle1
 p_c1 = find((x-a1).^2+(y-b1).^2<=r^2); p_out = setdiff(p_out,p_c1);
 %points_inside_circle2
