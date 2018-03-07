@@ -27,7 +27,7 @@ plot(x(c2),y(c2),'o');
 %y2 = sqrt( (r^2) - (x-a)^2 )- b;
 
 %Circle generation
-clc; clear all; close all;
+clc; clear all; figure; %close all;
 t = linspace(0,2*pi);
 r = 5;
 a1 = 2; b1=1; c1x= r*sin(t)+a1; c1y= r*cos(t)+b1; % cx1 = a1-r:0.01:a1+r; cy1= sqrt( (r^2) - (cx1-a1).^2 );
